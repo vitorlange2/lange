@@ -19,7 +19,7 @@ function calcularContaEnergia(salarioMinimo, quantidadeQuilowatts) {
     console.log(`O valor com 10% de desconto é: R$ ${valorComDesconto.toFixed(2)}`);
 }
 
-// Exemplo de uso
+
 let salarioMinimo = parseFloat(prompt("Digite o valor do salário mínimo:"));
 let quantidadeQuilowatts = parseFloat(prompt("Digite a quantidade de quilowatts consumidos:"));
 
@@ -69,15 +69,15 @@ function calcularDesconto(valorProduto) {
         return;
     }
 
-    let fitasAlugadasPorMes = qtdFitas / 3; // Um terço das fitas são alugadas por mês
-    let faturamentoAnual = fitasAlugadasPorMes * valorAluguel * 12; // Faturamento anual
+    let fitasAlugadasPorMes = qtdFitas / 3; 
+    let faturamentoAnual = fitasAlugadasPorMes * valorAluguel * 12; 
 
-    let fitasAtrasadasPorMes = fitasAlugadasPorMes / 10; // Um décimo das alugadas são atrasadas
-    let valorMultasPorMes = fitasAtrasadasPorMes * (valorAluguel * 0.10); // Multa de 10% sobre aluguel
+    let fitasAtrasadasPorMes = fitasAlugadasPorMes / 10; 
+    let valorMultasPorMes = fitasAtrasadasPorMes * (valorAluguel * 0.10); 
 
-    let fitasEstragadasPorAno = qtdFitas * 0.02; // 2% das fitas estragam ao longo do ano
-    let fitasReposicao = qtdFitas / 10; // 10% do total são compradas para reposição
-    let fitasNoFinalAno = qtdFitas - fitasEstragadasPorAno + fitasReposicao; // Cálculo final
+    let fitasEstragadasPorAno = qtdFitas * 0.02; 
+    let fitasReposicao = qtdFitas / 10; 
+    let fitasNoFinalAno = qtdFitas - fitasEstragadasPorAno + fitasReposicao; 
 
     let resultado = `Faturamento anual: R$ ${faturamentoAnual.toFixed(2)}\n` +
                     `Valor ganho com multas por mês: R$ ${valorMultasPorMes.toFixed(2)}\n` +
@@ -133,18 +133,18 @@ inverterNumero(numero);
         return;
     }
 
-    // Separando os dígitos manualmente
-    let centena = (numeroConta / 100) | 0; // Pegando apenas a parte inteira
-    let dezena = ((numeroConta % 100) / 10) | 0; // Pegando apenas a parte inteira
+    
+    let centena = (numeroConta / 100) | 0; 
+    let dezena = ((numeroConta % 100) / 10) | 0; 
     let unidade = numeroConta % 10; 
 
-    // Inverter o número
+    
     let numeroInvertido = (unidade * 100) + (dezena * 10) + centena;
 
-    // Somar o número original com o seu inverso
+    
     let soma = numeroConta + numeroInvertido;
 
-    // Multiplicar cada dígito da soma pela sua posição e somar os resultados
+    
     let somaString = soma.toString();
     let somaPosicional = 0;
 
@@ -153,12 +153,12 @@ inverterNumero(numero);
         somaPosicional += digito * (i + 1);
     }
 
-    // O dígito verificador é o último dígito da somaPosicional
+    
     let digitoVerificador = somaPosicional % 10;
 
     alert(`Número da conta: ${numeroConta}\nDígito verificador: ${digitoVerificador}`);
 }
 
-// Exemplo de uso
+
 let numeroConta = parseInt(prompt("Digite um número de conta com três dígitos:"));
 calcularDigitoVerificador(numeroConta);
